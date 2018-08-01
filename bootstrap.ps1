@@ -14,7 +14,7 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 
 # install packages
 choco install -y nodejs.install --version="${NODEJS_VERSION}"
-choco install -y hg yarn jdk8 svn ant
+choco install -y hg yarn jdk8 svn ant cmder
 choco install -y ruby --version=${RUBY_VERSION}
 choco install -y nant --version=${NANT_VERSION}
 
