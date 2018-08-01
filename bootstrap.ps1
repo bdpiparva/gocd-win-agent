@@ -34,10 +34,5 @@ $newSystemPath = "${newSystemPath};${env:ProgramFiles(x86)}\\Perforce\\bin;C:\\G
 [Environment]::SetEnvironmentVariable("Path", $newSystemPath, [EnvironmentVariableTarget]::Machine)
 $env:Path = $newSystemPath + ";" + [System.Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User)
 
-# Changing temp dir to avoid long file name
-New-Item "C:\tmp" -ItemType Directory
-$env:TEMP = "c:\tmp"
-$env:TMP = "c:\tmp"
-
 Add-LocalGroupMember -Group "Administrators" -Member "ContainerAdministrator"
 npm config set msvs_version 2015
