@@ -37,9 +37,12 @@ $env:Path = $newSystemPath + ";" + [System.Environment]::GetEnvironmentVariable(
 Add-LocalGroupMember -Group "Administrators" -Member "ContainerAdministrator"
 npm config set msvs_version 2015
 
+New-Item "C:/Users/ContainerAdministrator/.gradle" -ItemType Directory
+New-Item "C:/Users/ContainerAdministrator/.m2" -ItemType Directory
+New-Item "C:/Users/ContainerAdministrator/.bundle" -ItemType Directory
+
 cp C:/Users/ContainerAdministrator/user-config/gitconfig C:/Users/ContainerAdministrator/.gitconfig
 cp C:/Users/ContainerAdministrator/user-config/npmrc C:/Users/ContainerAdministrator/.npmrc
 cp C:/Users/ContainerAdministrator/user-config/init.gradle C:/Users/ContainerAdministrator/.gradle/init.gradle
 cp C:/Users/ContainerAdministrator/user-config/settings.xml C:/Users/ContainerAdministrator/.m2/settings.xml
 cp C:/Users/ContainerAdministrator/user-config/bundle-config C:/Users/ContainerAdministrator/.bundle/config
-cp C:/Users/ContainerAdministrator/user-config/gitattributes C:/Users/ContainerAdministrator/.gitattributes
